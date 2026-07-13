@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management Time Tracker</title>
+    <style>
+      /* Prevent flash of white before React mounts */
+      html { background: #080a0f; }
+    </style>
+    <script>
+      // Apply saved theme before first paint
+      (function(){
+        var t = localStorage.getItem('pmtt-theme');
+        document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+        document.documentElement.style.background = t === 'light' ? '#f0f2ff' : '#080a0f';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <footer>
+      @2026 &nbsp;&bull;&nbsp; Made By Prateek
+    </footer>
+  </body>
+</html>
