@@ -23,9 +23,6 @@ A full-stack project management and time tracking web application built with **S
 ### 📊 Dashboard — Admin View
 ![Dashboard Admin](docs/screenshots/Admin%20Dashboard.png)
 
-### 📊 Dashboard — Manager View
-![Dashboard Manager](docs/screenshots/Manager%20Dashboard.png)
-
 ### 📊 Dashboard — Member View
 ![Dashboard Member](docs/screenshots/Member%20Dashboard.png)
 
