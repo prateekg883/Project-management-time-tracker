@@ -25,6 +25,19 @@ public class AuthenticationService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public User register(String username, String password, String fullName, String email, com.timetracker.model.UserRole role) {
+        if (userRepository.findByUsername(username).isPresent()) {
+            throw new RuntimeException("Username already taken");
+        }
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password); // plain text for dev (matches existing login logic)
+        user.setFullName(fullName != null ? fullName : username);
+        user.setEmail(email);
+        user.setRole(role);
+        return userRepository.save(user);
+    }
+
     public boolean login(String username, String password) {
         Optional<User> opt = userRepository.findByUsername(username);
         if (opt.isEmpty()) {

@@ -56,6 +56,38 @@ public class AuthController {
         return ResponseEntity.ok(Map.of("status", "logged out"));
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody Map<String, String> body) {
+        String username = body.get("username");
+        String password = body.get("password");
+        String fullName = body.get("fullName");
+        String email    = body.get("email");
+        String roleStr  = body.get("role");
+
+        if (username == null || username.isBlank() || password == null || password.isBlank()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Username and password are required"));
+        }
+
+        try {
+            com.timetracker.model.UserRole role = com.timetracker.model.UserRole.TEAM_MEMBER;
+            if (roleStr != null) {
+                try { role = com.timetracker.model.UserRole.valueOf(roleStr.toUpperCase()); }
+                catch (IllegalArgumentException ignored) {}
+            }
+            User user = authService.register(username, password, fullName, email, role);
+            // auto-login
+            authService.login(username, password);
+            return ResponseEntity.ok(Map.of(
+                "id",       user.getId(),
+                "username", user.getUsername(),
+                "role",     user.getRole().name(),
+                "fullName", user.getFullName() != null ? user.getFullName() : ""
+            ));
+        } catch (RuntimeException ex) {
+            return ResponseEntity.badRequest().body(Map.of("error", ex.getMessage()));
+        }
+    }
+
     @GetMapping("/me")
     public ResponseEntity<?> me() {
         User user = authService.getCurrentUser();

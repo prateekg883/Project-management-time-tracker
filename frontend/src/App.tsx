@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard'
 import TimeTracking from './pages/TimeTracking'
 import Reports from './pages/Reports'
 import Login from './pages/Login'
+import Register from './pages/Register'
 
 // ── Theme Context ──────────────────────────────────────────────────────────────
 export const ThemeContext = createContext<{ dark: boolean; toggle: () => void }>({
@@ -288,7 +289,7 @@ function App() {
     <ThemeContext.Provider value={{ dark, toggle: toggleTheme }}>
       <div className="app" data-theme={dark ? 'dark' : 'light'}>
 
-        {location.pathname !== '/login' && (
+        {location.pathname !== '/login' && location.pathname !== '/register' && (
           <nav ref={navRef} style={{
             background: nav.bg,
             backdropFilter: 'blur(16px)',
@@ -378,6 +379,7 @@ function App() {
             <Route path="/time"      element={<TimeTracking />} />
             <Route path="/reports"   element={<Reports />} />
             <Route path="/login"     element={<Login onLoginSuccess={u => setCurrentUser(u)} />} />
+            <Route path="/register"  element={<Register onLoginSuccess={u => setCurrentUser(u)} />} />
           </Routes>
         </main>
       </div>

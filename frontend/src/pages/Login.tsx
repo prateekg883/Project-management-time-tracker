@@ -200,6 +200,20 @@ export default function Login({ onLoginSuccess }: LoginProps) {
               Continue as Guest
             </button>
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: '14px' }}>
+            <span style={{ fontSize: '14px', color: dark ? '#64748b' : '#6b7280' }}>
+              Don't have an account?{' '}
+            </span>
+            <button type="button" onClick={() => navigate('/register')} style={{
+              background: 'none', border: 'none',
+              color: dark ? '#a78bfa' : '#667eea',
+              cursor: 'pointer', fontSize: '14px',
+              fontWeight: '700', textDecoration: 'underline',
+            }}>
+              Sign Up
+            </button>
+          </div>
         </form>
       </div>
     </div>
