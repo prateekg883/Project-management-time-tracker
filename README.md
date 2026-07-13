@@ -8,29 +8,38 @@ A full-stack project management and time tracking web application built with **S
 
 ## Screenshots
 
-### 🏠 Home Page
-![Home Page](docs/screenshots/home-dark.png)
-
 ### 🔐 Login
-![Login](docs/screenshots/login.png)
+![Login](docs/screenshots/Login%20Page.png)
 
-### 📊 Project Dashboard — Admin View
-![Dashboard Admin](docs/screenshots/dashboard-admin.png)
+### 📝 Create Account (Register)
+![Register](docs/screenshots/Create%20Account.png)
 
-### 📊 Project Dashboard — Manager View
-![Dashboard Manager](docs/screenshots/dashboard-manager.png)
+### 🏠 Home Page — Admin
+![Home Admin](docs/screenshots/Admin%20Home%20Page.png)
 
-### 📊 Project Dashboard — Member View (View-only)
-![Dashboard Member](docs/screenshots/dashboard-member.png)
+### 🏠 Home Page — Member
+![Home Member](docs/screenshots/Member%20Home%20Page.png)
+
+### 📊 Dashboard — Admin View
+![Dashboard Admin](docs/screenshots/Admin%20Dashboard.png)
+
+### 📊 Dashboard — Manager View
+![Dashboard Manager](docs/screenshots/Manager%20Dashboard.png)
+
+### 📊 Dashboard — Member View
+![Dashboard Member](docs/screenshots/Member%20Dashboard.png)
 
 ### ✅ All Tasks
-![All Tasks](docs/screenshots/dashboard-tasks.png)
+![All Tasks](docs/screenshots/All%20Tasks.png)
 
 ### 📋 Kanban Board
-![Kanban Board](docs/screenshots/kanban.png)
+![Kanban](docs/screenshots/Admin%20Kanban.png)
+
+### ⏱️ Time Tracking
+![Time Tracking](docs/screenshots/Member%20TimeTracking.png)
 
 ### 📈 Reports & Analytics
-![Reports](docs/screenshots/reports.png)
+![Reports](docs/screenshots/Member%20Report.png)
 
 ---
 
